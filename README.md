@@ -1,102 +1,57 @@
-# Shruti Sridhar — Portfolio
+# Shruti Sridhar · AI / ML Engineer
+### New York, NY · [shruti25838.github.io/Portfolio](https://shruti25838.github.io/Portfolio/)
 
-Personal portfolio website for Shruti Sridhar, an AI/ML engineer based in New York.
+I build production-grade machine learning systems, retrieval (RAG) pipelines, and rigorous evaluation workflows to keep models grounded and performant. Recent Computer Engineering graduate from NYU.
 
-## Tech Stack
+---
 
-- **Framework**: Next.js 16 (App Router) + TypeScript
-- **Styling**: Tailwind CSS v4
-- **Animations**: Framer Motion
-- **Icons**: lucide-react + custom SVG icons
-- **Images**: next/image (optimized)
-- **Fonts**: Bricolage Grotesque, Hanken Grotesk, JetBrains Mono (Google Fonts)
+## 🛠️ Tech Stack & Toolkit
 
-## Getting Started
+- **Languages**: Python, SQL, TypeScript, Java
+- **LLM & Retrieval**: RAG Pipelines, LangChain, LangGraph, LangSmith, FAISS, Pinecone, Hybrid Search, Hugging Face
+- **ML Frameworks**: PyTorch (CUDA/GPU), TensorFlow, Scikit-learn, Stable-Baselines3, XGBoost, LightGBM, LoRA/PEFT, SHAP
+- **MLOps & Backend**: Airflow, FastAPI, Flask, Docker, Kubernetes, gRPC, Prometheus, Grafana, PostgreSQL, Redis
+- **Cloud & Infra**: AWS (EC2, S3, SageMaker), Azure, Linux, CI/CD (GitHub Actions)
 
-### Install dependencies
+---
+
+## 🚀 Featured Projects
+
+### 🏎️ BoxBox · F1 Pit-Stop Strategy Optimizer
+- Custom Gymnasium environment simulating F1 races lap-by-lap using 45k+ real telemetry laps.
+- Trained a PPO reinforcement learning agent that beats fixed-window strategy baselines by 5.7 positions.
+- Served recommendations via gRPC at 4.67ms p95 latency, monitored via Grafana & Prometheus, deployed on Azure Container Apps.
+
+### 🤖 CodeMentor AI · Multi-Agent Codebase Assistant
+- Multi-agent system (Planner, Retrieval, Analyst, Mentor, Memory) built using LangGraph and FastAPI.
+- Combines FAISS vector search with Tree-sitter AST parsing for codebase retrieval under 800ms p95.
+- Streamed responses via Server-Sent Events (SSE) to a Next.js front-end.
+
+### 🔍 AskMyDocs · RAG Document Intelligence
+- Hybrid semantic search tool featuring an OCR extraction layer for scanned PDFs.
+- Incorporates fallback web search to dynamically fill query gaps when document contexts are insufficient.
+
+---
+
+## 🎓 Education & Certifications
+
+- **M.S. in Computer Engineering** · New York University (GPA: 3.7/4.0)
+- **B.Tech in Computer Science & Engineering** · Vellore Institute of Technology, India
+- **Certifications**: IBM AI Engineering, DeepLearning.AI MLOps, DeepLearning.AI LangChain & LangGraph, Stanford Machine Learning
+
+---
+
+## 🛠️ Local Development (Next.js)
+
+If you'd like to run this portfolio locally:
 
 ```bash
+# Install dependencies
 npm install
-```
 
-### Run development server
-
-```bash
+# Run the local development server
 npm run dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
-
-### Build for production
-
-```bash
+# Build for production static export
 npm run build
 ```
-
-### Deploy to Vercel
-
-Push to a GitHub repository, then import it in [Vercel](https://vercel.com). No special configuration needed — Vercel auto-detects Next.js.
-
-Or use the Vercel CLI:
-
-```bash
-npx vercel
-```
-
-## Project Structure
-
-```
-├── app/
-│   ├── globals.css          # Global styles, CSS variables, animations
-│   ├── layout.tsx           # Root layout with SEO metadata & fonts
-│   └── page.tsx             # Main page assembling all sections
-├── components/
-│   ├── sections/            # One component per portfolio section
-│   │   ├── Hero.tsx
-│   │   ├── About.tsx
-│   │   ├── Toolkit.tsx
-│   │   ├── Projects.tsx
-│   │   ├── Experience.tsx
-│   │   ├── Patents.tsx
-│   │   ├── Education.tsx
-│   │   └── Contact.tsx
-│   └── ui/                  # Shared UI components
-│       ├── Nav.tsx
-│       ├── ScrollProgress.tsx
-│       ├── CustomCursor.tsx
-│       ├── SectionLabel.tsx
-│       ├── SectionHeading.tsx
-│       ├── Chip.tsx
-│       ├── StatCounter.tsx
-│       ├── GitHubIcon.tsx
-│       └── LinkedInIcon.tsx
-├── lib/
-│   └── content.ts           # All portfolio content (typed, easy to edit)
-└── public/
-    └── images/              # Portfolio images
-```
-
-## Customization
-
-All content lives in `lib/content.ts` — edit text, links, and data there.
-
-### Placeholders to replace
-
-Search for `TODO` comments across the codebase:
-
-- **Your photo**: Replace `/public/images/about-portrait.png`
-- **LinkedIn URL**: Update in `lib/content.ts` → `SOCIAL_LINKS`
-- **Résumé URL**: Update in `lib/content.ts` → `SOCIAL_LINKS`
-- **Project demo links**: Update BoxBox and CodeMentor AI links in `PROJECTS`
-- **Project screenshots**: Replace images in `/public/images/`
-- **OG Image**: Add to `app/layout.tsx` metadata
-
-## Design System
-
-- **Palette**: Warm paper (#F7F1E6), cream surface, dark ink, 6 accent colors
-- **Typography**: Bricolage Grotesque (headings), Hanken Grotesk (body), JetBrains Mono (code/labels)
-- **Motion**: Smooth cubic-bezier(0.16, 1, 0.3, 1) reveals, respects `prefers-reduced-motion`
-
-## License
-
-© 2026 Shruti Sridhar
