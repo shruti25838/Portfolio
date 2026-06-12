@@ -1,0 +1,128 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-bg: #F7F1E6;
+  --color-surface: #FFFEFA;
+  --color-ink: #191512;
+  --color-ink-2: #6B6256;
+  --color-line: rgba(25, 21, 18, 0.13);
+  --color-accent-coral: #FF4326;
+  --color-accent-blue: #2D52FF;
+  --color-accent-green: #06A567;
+  --color-accent-violet: #6E37F0;
+  --color-accent-amber: #F79A12;
+  --color-accent-pink: #FF3D8B;
+
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Hanken Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-ink-2);
+  border-radius: 3px;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(255, 67, 38, 0.15);
+  color: var(--color-ink);
+}
+
+/* Focus visible */
+*:focus-visible {
+  outline: 2px solid var(--color-accent-coral);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Terminal cursor blink */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.terminal-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+/* Ken Burns hero */
+@keyframes kenburns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+.ken-burns {
+  animation: kenburns 25s ease-in-out infinite alternate;
+}
+
+/* Pulsing dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.5); }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Scroll progress gradient */
+.scroll-progress-gradient {
+  background: linear-gradient(90deg, 
+    var(--color-accent-coral) 0%, 
+    var(--color-accent-amber) 25%, 
+    var(--color-accent-green) 50%, 
+    var(--color-accent-blue) 75%, 
+    var(--color-accent-violet) 100%
+  );
+}
+
+/* Scroll cue bounce */
+@keyframes bounce-scroll {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+.scroll-cue {
+  animation: bounce-scroll 2s ease-in-out infinite;
+}
