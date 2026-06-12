@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { HERO, SOCIAL_LINKS } from '@/lib/content';
+import { HERO, SOCIAL_LINKS, getAssetPath } from '@/lib/content';
 import { Mail, FileText, ChevronDown } from 'lucide-react';
 import GitHubIcon from '@/components/ui/GitHubIcon';
 import LinkedInIcon from '@/components/ui/LinkedInIcon';
@@ -55,7 +55,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         {/* // TODO: replace with your own hero background image */}
         <Image
-          src="/images/hero-bg.png"
+          src={getAssetPath('/images/hero-bg.png')}
           alt="Abstract neural network visualization with glowing data connections — AI/ML themed background"
           fill
           className="object-cover ken-burns"

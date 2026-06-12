@@ -6,7 +6,7 @@ import Image from 'next/image';
 import { ExternalLink, Code2, ChevronDown } from 'lucide-react';
 import SectionLabel from '@/components/ui/SectionLabel';
 import SectionHeading from '@/components/ui/SectionHeading';
-import { PROJECTS, ACCENT_COLORS } from '@/lib/content';
+import { PROJECTS, ACCENT_COLORS, getAssetPath } from '@/lib/content';
 import type { Project } from '@/lib/content';
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
@@ -29,7 +29,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       {/* Image */}
       <div className="relative aspect-[16/10] overflow-hidden">
         <Image
-          src={project.image}
+          src={getAssetPath(project.image)}
           alt={project.imageAlt}
           fill
           className="object-cover transition-transform duration-700 ease-out-expo group-hover:scale-105"

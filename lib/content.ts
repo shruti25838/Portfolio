@@ -1,6 +1,13 @@
 // lib/content.ts
 // All portfolio content in one typed file for easy editing
 
+const basePath = process.env.__NEXT_ROUTER_BASEPATH || '';
+export const getAssetPath = (path: string) => {
+  if (!path || path.startsWith('http') || path.startsWith('mailto:') || path.startsWith('#')) return path;
+  const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  return `${basePath}${normalizedPath}`;
+};
+
 export interface NavLink {
   label: string;
   href: string;

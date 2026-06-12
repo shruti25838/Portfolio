@@ -6,7 +6,7 @@ import Image from 'next/image';
 import SectionLabel from '@/components/ui/SectionLabel';
 import SectionHeading from '@/components/ui/SectionHeading';
 import StatCounter from '@/components/ui/StatCounter';
-import { ABOUT, STATS } from '@/lib/content';
+import { ABOUT, STATS, getAssetPath } from '@/lib/content';
 
 function TerminalBlock() {
   const ref = useRef<HTMLDivElement>(null);
@@ -91,7 +91,7 @@ export default function About() {
                 </div>
                 <div className="absolute inset-[6px] rounded-full overflow-hidden">
                   <Image
-                    src="/images/about-portrait.jpg"
+                    src={getAssetPath('/images/about-portrait.jpg')}
                     alt="Shruti Sridhar"
                     fill
                     className="object-cover"
